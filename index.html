@@ -492,7 +492,7 @@
           <i class="bi bi-telephone flex-shrink-0"></i>
           <div>
             <h3>Call Us</h3>
-            <p>+1 5713974842</p>
+            <p>+1 571-397-4842</p>
           </div>
         </div><!-- End Info Item -->
 
@@ -506,43 +506,85 @@
 
       </div><!-- End Contact Info -->
 
-      <!-- Contact Form -->
-      <div class="col-lg-8">
-        <form action="https://formspree.io/f/movgwwqv" method="POST" data-aos="fade-up" data-aos-delay="200">
+    <!-- Contact Form -->
+<div class="col-lg-8">
+  <form id="contact-form" action="https://formspree.io/f/movgwwqv" method="POST" data-aos="fade-up" data-aos-delay="200">
 
-          <!-- Redirect to thank-you page -->
-          <input type="hidden" name="_redirect" value="https://ashburnitservices.com/thank-you.html">
+    <div class="row gy-4">
 
-          <div class="row gy-4">
+      <div class="col-md-6">
+        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+      </div>
 
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-            </div>
+      <div class="col-md-6">
+        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+      </div>
 
-            <div class="col-md-6">
-              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-            </div>
+      <div class="col-md-12">
+        <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+      </div>
 
-            <div class="col-md-12">
-              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-            </div>
+      <div class="col-md-12">
+        <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+      </div>
 
-            <div class="col-md-12">
-              <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
-            </div>
+      <div class="col-md-12 text-center">
+        <div class="loading" style="display:none;">Loading</div>
+        <div class="error-message" style="display:none; color:#721c24; background:#f8d7da; padding:10px; border-radius:5px;"></div>
+        <div class="sent-message" style="display:none; color:#155724; background:#d4edda; padding:10px; border-radius:5px;">Your message has been sent. Thank you!</div>
 
-            <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
+        <button type="submit">Send Message</button>
+      </div>
 
-              <button type="submit">Send Message</button>
-            </div>
+    </div>
 
-          </div>
+  </form>
+</div><!-- End Contact Form -->
 
-        </form>
-      </div><!-- End Contact Form -->
+<script>
+const form = document.getElementById('contact-form');
+const loadingDiv = form.querySelector('.loading');
+const errorDiv = form.querySelector('.error-message');
+const successDiv = form.querySelector('.sent-message');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Reset messages
+  loadingDiv.style.display = 'block';
+  errorDiv.style.display = 'none';
+  successDiv.style.display = 'none';
+
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => response.json())
+  .then(data => {
+    loadingDiv.style.display = 'none';
+
+    if (data.ok) {
+      successDiv.style.display = 'block';
+      form.reset();
+    } else {
+      let errorMessage = 'Oops! There was a problem sending your message.';
+      if (data.errors) {
+        errorMessage = data.errors.map(err => err.message).join(", ");
+      }
+      errorDiv.textContent = errorMessage;
+      errorDiv.style.display = 'block';
+    }
+  })
+  .catch(() => {
+    loadingDiv.style.display = 'none';
+    errorDiv.textContent = 'Oops! There was a problem sending your message.';
+    errorDiv.style.display = 'block';
+  });
+});
+</script>
 
     </div><!-- End row -->
 
@@ -653,6 +695,7 @@
 
 
 </html>
+
 
 
 
