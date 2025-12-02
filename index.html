@@ -454,91 +454,102 @@
     </section><!-- /Portfolio Section -->
     
    
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+ <!-- Contact Section -->
+<section id="contact" class="contact section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Contact Us</p>
-      </div><!-- End Section Title -->
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Contact Us</p>
+  </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-          <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d308.123456789!2d-77.528400123!3d39.000321987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64abcd1234567%3A0xabcdef1234567890!2s42511%20Oak%20Park%20Sq%2C%20Ashburn%2C%20VA%2010148!5e0!3m2!1sen!2sus!4v1695740000000!5m2!1sen!2sus"
-  style="border:0; width:100%; height:270px;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-        </div><!-- End Google Maps -->
+    <!-- Google Maps -->
+    <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d308.123456789!2d-77.528400123!3d39.000321987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64abcd1234567%3A0xabcdef1234567890!2s42511%20Oak%20Park%20Sq%2C%20Ashburn%2C%20VA%2010148!5e0!3m2!1sen!2sus!4v1695740000000!5m2!1sen!2sus"
+        style="border:0; width:100%; height:270px;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div><!-- End Google Maps -->
 
-        <div class="row gy-4">
+    <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>42511 Oak Park Square, Ashburn, VA, 20148</p>
-              </div>
-            </div><!-- End Info Item -->
+      <!-- Contact Info -->
+      <div class="col-lg-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Address</h3>
+            <p>42511 Oak Park Square, Ashburn, VA, 20148</p>
+          </div>
+        </div><!-- End Info Item -->
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+1 5713974842</p>
-              </div>
-            </div><!-- End Info Item -->
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Call Us</h3>
+            <p>+1 5713974842</p>
+          </div>
+        </div><!-- End Info Item -->
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>info@ashburnitservices.com</p>
-              </div>
-            </div><!-- End Info Item -->
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Email Us</h3>
+            <p>info@ashburnitservices.com</p>
+          </div>
+        </div><!-- End Info Item -->
+
+      </div><!-- End Contact Info -->
+
+      <!-- Contact Form -->
+      <div class="col-lg-8">
+        <form action="https://formspree.io/f/movgwwqv" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+
+          <!-- Redirect to thank-you page -->
+          <input type="hidden" name="_redirect" value="https://ashburnitservices.com/thank-you.html">
+
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+            </div>
+
+            <div class="col-md-12">
+              <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <button type="submit">Send Message</button>
+            </div>
 
           </div>
 
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+        </form>
+      </div><!-- End Contact Form -->
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
+    </div><!-- End row -->
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
+  </div><!-- End container -->
 
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
+</section><!-- End Contact Section -->
 
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
 
     </section><!-- /Contact Section -->
 
@@ -642,6 +653,7 @@
 
 
 </html>
+
 
 
 
