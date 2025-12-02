@@ -506,8 +506,8 @@
 
       </div><!-- End Contact Info -->
 
-    <!-- Contact Form -->
-<div class="col-lg-8">
+   <!-- Contact Form -->
+<div class="col-lg-8" id="contact-form-section">
   <form id="contact-form" action="https://formspree.io/f/movgwwqv" method="POST" data-aos="fade-up" data-aos-delay="200">
 
     <div class="row gy-4">
@@ -533,13 +533,14 @@
         <div class="error-message" style="display:none; color:#721c24; background:#f8d7da; padding:10px; border-radius:5px;"></div>
         <div class="sent-message" style="display:none; color:#155724; background:#d4edda; padding:10px; border-radius:5px;">Your message has been sent. Thank you!</div>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" class="btn btn-warning">Send Message</button>
       </div>
 
     </div>
 
   </form>
 </div><!-- End Contact Form -->
+
 
 <script>
 const form = document.getElementById('contact-form');
@@ -695,6 +696,7 @@ form.addEventListener('submit', function(e) {
 
 
 </html>
+
 
 
 
